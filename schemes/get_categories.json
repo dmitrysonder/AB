@@ -1,0 +1,43 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "status": {
+        "type": "string"
+      },
+      "message": {
+        "type": "string"
+      },
+      "uuid": {
+        "type": "string"
+      },
+      "title": {
+        "type": "string"
+      },
+      "description": {
+        "type": "string"
+      },
+      "background": {
+        "type": "string"
+      },
+      "totalDonated": {
+        "type": "number"
+      },
+      "lastMonthDonated": {
+        "type": "number"
+      }
+    },
+    "required": [
+      "status",
+      "message",
+      "uuid",
+      "title",
+      "description",
+      "background",
+      "totalDonated",
+      "lastMonthDonated"
+    ]
+  }
+}

@@ -1,0 +1,180 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "status": {
+      "type": "string"
+    },
+    "message": {
+      "type": "string"
+    },
+    "uuid": {
+      "type": "string"
+    },
+    "created": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "confirmed": {
+      "type": "boolean"
+    },
+    "urgent": {
+      "type": "boolean"
+    },
+    "shortTitle": {
+      "type": "string"
+    },
+    "teaser": {
+      "type": "string"
+    },
+    "logo": {
+      "type": "string"
+    },
+    "background": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "categoryTitle": {
+      "type": "string"
+    },
+    "categoryUuid": {
+      "type": "string"
+    },
+    "phoneList": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "founders": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "management": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "employersonStaff": {
+      "type": "number"
+    },
+    "employersnonStaff": {
+      "type": "number"
+    },
+    "employers": {
+      "type": "string"
+    },
+    "onStaff": {
+      "type": "number"
+    },
+    "nonStaff": {
+      "type": "number"
+    },
+    "country": {
+      "type": "string"
+    },
+    "land": {
+      "type": "string"
+    },
+    "city": {
+      "type": "string"
+    },
+    "address": {
+      "type": "string"
+    },
+    "zip": {
+      "type": "number"
+    },
+    "email": {
+      "type": "string"
+    },
+    "webSite": {
+      "type": "string"
+    },
+    "fax": {
+      "type": "string"
+    },
+    "bankAccount": {
+      "type": "string"
+    },
+    "bankName": {
+      "type": "string"
+    },
+    "swift": {
+      "type": "string"
+    },
+    "photo": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "videoTitle": {
+      "type": "string"
+    },
+    "videoDescription": {
+      "type": "string"
+    },
+    "videoFile": {
+      "type": "string"
+    },
+    "totalDonated": {
+      "type": "number"
+    },
+    "lastMonthDonated": {
+      "type": "number"
+    },
+    "tm_id": {
+      "type": "number"
+    }
+  },
+  "required": [
+    "status",
+    "message",
+    "uuid",
+    "created",
+    "title",
+    "confirmed",
+    "urgent",
+    "shortTitle",
+    "teaser",
+    "logo",
+    "background",
+    "description",
+    "categoryTitle",
+    "categoryUuid",
+    "phoneList",
+    "founders",
+    "management",
+    "employersonStaff",
+    "employersnonStaff",
+    "employers",
+    "onStaff",
+    "nonStaff",
+    "country",
+    "land",
+    "city",
+    "address",
+    "zip",
+    "email",
+    "webSite",
+    "fax",
+    "bankAccount",
+    "bankName",
+    "swift",
+    "photo",
+    "videoTitle",
+    "videoDescription",
+    "videoFile",
+    "totalDonated",
+    "lastMonthDonated",
+    "tm_id"
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "status": {
+      "type": "string"
+    },
+    "message": {
+      "type": "string"
+    },
+    "uuid": {
+      "type": "string"
+    },
+    "category": {
+      "type": "string"
+    },
+    "categoryCharity": {
+      "type": "string"
+    },
+    "categoryPartner": {
+      "type": "string"
+    },
+    "date": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "clubLink": {
+      "type": "string"
+    },
+    "charityUID": {
+      "type": "string"
+    },
+    "charityName": {
+      "type": "string"
+    },
+    "charityCategoryName": {
+      "type": "string"
+    },
+    "charityImage": {
+      "type": "string"
+    },
+    "newsTeaser": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "image": {
+      "type": "string"
+    },
+    "view": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "status",
+    "message",
+    "uuid",
+    "category",
+    "categoryCharity",
+    "categoryPartner",
+    "date",
+    "title",
+    "clubLink",
+    "charityUID",
+    "charityName",
+    "charityCategoryName",
+    "charityImage",
+    "newsTeaser",
+    "description",
+    "image",
+    "view"
+  ]
+}
