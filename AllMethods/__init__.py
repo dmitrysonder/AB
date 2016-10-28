@@ -45,7 +45,7 @@ def post_auth(email,password):
     return r
 
 #json=payload прочитал в доке. должно работать как json в теле пост запроса. надо проверить
-def post_member_update(email, password, newemail='', newpassword='', firstname='',lastname='',birthdate='',sex='0'):
+def post_member_update(email, password, newemail, newpassword, firstname,lastname,birthdate,sex='0'):
     payload = {'email':newemail, 'password':newpassword, 'firstname':firstname, 'lastname':lastname, 'birthdate':birthdate, 'sex':sex}
     headers = {'Content-type': 'application/json'}
     r = requests.post(BASE_URL + '/member/update', auth=(email,password), json=payload, headers=headers )

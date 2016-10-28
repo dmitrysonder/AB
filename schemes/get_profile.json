@@ -1,0 +1,60 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "username": {
+      "type": "string"
+    },
+    "email": {
+      "type": "string"
+    },
+    "uuid": {
+      "type": "string"
+    },
+    "birthdate": {
+      "type": "string"
+    },
+    "img": {
+      "type": "string"
+    },
+    "sex": {
+      "type": "string"
+    },
+    "hide": {
+      "type": "string"
+    },
+    "tm_id": {
+      "type": "integer"
+    },
+    "totalDonated": {
+      "type": "number"
+    },
+    "lastMonthDonated": {
+      "type": "number"
+    },
+    "lastName": {
+      "type": "string"
+    },
+    "firstName": {
+      "type": "string"
+    },
+    "notificationsCount": {
+      "type": "integer"
+    }
+  },
+  "required": [
+    "username",
+    "email",
+    "uuid",
+    "birthdate",
+    "img",
+    "sex",
+    "hide",
+    "tm_id",
+    "totalDonated",
+    "lastMonthDonated",
+    "lastName",
+    "firstName",
+    "notificationsCount"
+  ]
+}

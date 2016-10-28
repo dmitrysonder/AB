@@ -1,10 +1,12 @@
 import allure
 from Allmethods import *
 
+email = 'korbit.bot@gmail.com'
+password = '123456'
 
 @allure.step("Статус код 200 ОК?")
-def test_get_topmembers():
-    response = get_topmembers()
+def test_get_transactions():
+    response = get_transactions(email,password)
     assert response.status_code == 200
 
 

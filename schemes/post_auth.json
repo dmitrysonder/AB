@@ -1,0 +1,16 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "tm_id": {
+      "type": "integer"
+    },
+    "email": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "tm_id",
+    "email"
+  ]
+}

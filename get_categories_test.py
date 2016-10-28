@@ -1,8 +1,10 @@
 import json
+
 import jsonschema
-from Allmethods import *
 import pytest
+
 import allure
+from Allmethods import *
 
 
 @allure.step("Статус код 200 ОК?")
