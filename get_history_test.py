@@ -1,13 +1,13 @@
-import allure
-from Allmethods import *
+from Allmethods import get_history
 
 email = 'korbit.bot@gmail.com'
 password = '123456'
 
-@allure.step("Статус код 200 ОК?")
+
 def test_get_history():
     response = get_history(email=email, password=password)
     assert response.status_code == 200
+
 '''
 @allure.step("Валидация структуры JSON и типов данных")
 def test_jsonschema_history():

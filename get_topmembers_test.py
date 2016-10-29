@@ -1,8 +1,6 @@
-import allure
-from Allmethods import *
+from Allmethods import get_topmembers
 
 
-@allure.step("Статус код 200 ОК?")
 def test_get_topmembers():
     response = get_topmembers()
     assert response.status_code == 200
