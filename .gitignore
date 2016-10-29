@@ -1,0 +1,17 @@
+.idea
+.pyc
+__pycache__/
+*.py[cod]
+*$py.class
+allure-report
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test
+.cache
+
+# virtualenv
+venv/
+ENV/
