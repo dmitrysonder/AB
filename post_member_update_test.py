@@ -1,19 +1,17 @@
 import json
 import jsonschema
 import pytest
-import allure
-from Allmethods import *
+from Allmethods import post_member_update
 import time
-from qadata import *
+from qadata import id_generator
 
 email = 'userforupdate@test.com'
 password = '123456'
 
 
-@allure.step("Обновление email пользователя")
 def test_email_update():
-    newemail = 'update' + str(time.time()) + '@test.com'
-    response = post_member_update(email=email, password=password, newemail=newemail)
+    new_email = 'update' + str(time.time()) + '@test.com'
+    response = post_member_update(email=email, password=password, newemail=new_email)
     assert response.status_code == 200
     schema = open("schemes/get_profile.json").read()
     try:
@@ -23,9 +21,9 @@ def test_email_update():
     except jsonschema.ValidationError as e:
         pytest.fail(e)
     j = json.loads(response.text)
-    assert j['email'] == newemail
+    assert j['email'] == new_email
 
-@allure.step("Обновление имени и фамилии пользователя")
+
 def test_name_update():
     firstname = id_generator(size=10)
     lastname = id_generator(size=10)
@@ -42,10 +40,10 @@ def test_name_update():
     assert j['firstName'] == firstname
     assert j['lastName'] == lastname
 
-@allure.step("Обновление пола пользователя")
+
 def test_sex_update():
-    sexvars = ['0','1','2']
-    sex = random.choice(sexvars)
+    sex_vars = ['0', '1', '2']
+    sex = random.choice(sex_vars)
     response = post_member_update(email=email, password=password, sex=sex)
     assert response.status_code == 200
     schema = open("schemes/get_profile.json").read()
@@ -57,9 +55,3 @@ def test_sex_update():
         pytest.fail(e)
     j = json.loads(response.text)
     assert j['sex'] == sex
-
-
-
-
-
-
