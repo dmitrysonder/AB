@@ -1,7 +1,4 @@
-import json
-import jsonschema
-import pytest
-from AllMethods import post_auth
+from AllMethods.all_methods import post_auth, validate_jsonschema
 
 email = 'korbit.bot@gmail.com'
 password = '123456'
@@ -16,14 +13,9 @@ def test_post_auth():
 def test_jsonschema_auth():
     schema = open("schemes/post_auth.json").read()
     response = post_auth(email=email, password=password)
-    try:
-        v = jsonschema.Draft4Validator(json.loads(schema))
-        for error in sorted(v.iter_errors(json.loads(response.text)), key=str):
-            pytest.fail(error)
-    except jsonschema.ValidationError as e:
-        pytest.fail(e)
+    validate_jsonschema(schema, response)
 
 
-def test_auth_incorrect_passwd():
+def test_auth_incorrect_password():
     response = post_auth(email=email, password=bad_pass)
     assert response.status_code == 401

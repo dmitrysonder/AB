@@ -1,4 +1,7 @@
 import requests
+import json
+import jsonschema
+import pytest
 
 BASE_URL = 'http://appybuy.korbit.eu:8080/magnoliaPublic/.rest/appybuy/v1'
 
@@ -102,3 +105,11 @@ def post_photo(email, password, image):
     headers = {'Content-type': 'application/json'}
     r = requests.post(BASE_URL + '/member/update', auth=(email, password), json=payload, headers=headers)
     return r
+
+
+def validate_jsonschema(schema, response):
+    try:
+        jsonschema.Draft3Validator(json.loads(schema)).validate(json.loads(response.text))
+    except jsonschema.ValidationError as e:
+        error = e.message + " " + str(e.absolute_schema_path)
+        pytest.fail(error)

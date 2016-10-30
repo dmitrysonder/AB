@@ -1,7 +1,4 @@
-import json
-import jsonschema
-import pytest
-from Allmethods import get_categories
+from AllMethods.all_methods import get_categories, validate_jsonschema
 
 
 def test_get_categories():
@@ -12,9 +9,4 @@ def test_get_categories():
 def test_jsonschema_categories():
     schema = open("schemes/get_categories.json").read()
     response = get_categories()
-    try:
-        v = jsonschema.Draft4Validator(json.loads(schema))
-        for error in sorted(v.iter_errors(json.loads(response.text)), key=str):
-            pytest.fail(error)
-    except jsonschema.ValidationError as e:
-        pytest.fail(e)
+    validate_jsonschema(schema, response)
