@@ -1,7 +1,4 @@
-import json
-import jsonschema
-import pytest
-from Allmethods import get_profile
+from AllMethods.all_methods import get_profile, validate_jsonschema
 
 email = 'korbit.bot@gmail.com'
 password = '123456'
@@ -15,9 +12,5 @@ def test_get_profile():
 def test_jsonschema_profile():
     schema = open("schemes/get_profile.json").read()
     response = get_profile(email=email, password=password)
-    try:
-        v = jsonschema.Draft4Validator(json.loads(schema))
-        for error in sorted(v.iter_errors(json.loads(response.text)), key=str):
-            print(error.message)
-    except jsonschema.ValidationError as e:
-        pytest.fail(e)
+    validate_jsonschema(schema, response)
+

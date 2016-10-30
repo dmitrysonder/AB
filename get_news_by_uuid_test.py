@@ -1,7 +1,4 @@
-import json
-import jsonschema
-import pytest
-from Allmethods import get_news_by_uuid
+from AllMethods.all_methods import get_news_by_uuid, validate_jsonschema
 
 
 def test_get_news_by_uuid():
@@ -12,9 +9,4 @@ def test_get_news_by_uuid():
 def test_jsonschema_news_by_uuid():
     schema = open("schemes/get_news_by_uuid.json").read()
     response = get_news_by_uuid()
-    try:
-        v = jsonschema.Draft4Validator(json.loads(schema))
-        for error in sorted(v.iter_errors(json.loads(response.text)), key=str):
-            pytest.fail(error)
-    except jsonschema.ValidationError as e:
-        pytest.fail(e)
+    validate_jsonschema(schema, response)
