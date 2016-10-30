@@ -4,6 +4,8 @@ __pycache__/
 *.py[cod]
 *$py.class
 allure-report
+report.html
+assets
 
 # Installer logs
 pip-log.txt
